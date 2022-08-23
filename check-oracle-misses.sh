@@ -7,8 +7,6 @@ counter=$(curl -s "${api_url}/oracle/validators/${valoper}/miss" |\
     jq .miss_counter |\
     sed 's/"//g')
 
-echo "$counter"
-
 if [ $counter -gt 1000 ]; then
     # ESCALATION!
     message="Price feeder is down!"

@@ -8,8 +8,19 @@ There are two different types of scripts: check scripts that get the needed data
 
 Of course you don't even need to use API endpoints at all and retrieve the data with your cosmos-sdk binary locally. By using an external API, you can even let your monitoring run on seperate hosts.
 
+## Set up alarming
+
+Just put your monitoring scripts into a crontab
+
+```
+0 */4 * * * /path/to/check-funds.sh
+*/15 * * * * /path/to/check-oracle-misses.sh
+```
+
+You probably need to adjust the interval for every script individually. 
+
 ## Adding alarming endpoints
 
-You can add an alarming endpoint by simply adding a new script. If you want to have notifications to different Discord channels for example, you could have multiple scripts like `send-discord-general` and `send-discord-important-news`, each with a different url and use them seperately.
+You can add an alarming endpoint by simply adding a new script. If you want to have notifications to different Discord channels for example, you could have multiple scripts like `send-discord-general.sh` and `send-discord-important-news.sh`, each with a different url and use them seperately.
 
 Or you modify the notification scripts and pass parameters instead of creating copies.

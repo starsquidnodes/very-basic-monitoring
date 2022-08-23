@@ -1,3 +1,5 @@
+# Very basic monitoring example
+
 This is an example of a very basic on-chain monitoring and alerting. The idea is to provide a basic structure, which can be simply expanded while keeping the complexity of every part at a mininum.
 
 ## Script types
